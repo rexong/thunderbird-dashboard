@@ -49,7 +49,7 @@ func logContainers(containers []docker.ContainerInfo) {
 	for _, container := range containers {
 		log.Printf(
 			"ID: %s - Name: %s - Status: %s - Running: %v",
-			container.ID,
+			container.ID[:5],
 			container.Name,
 			container.Status,
 			container.Running,
