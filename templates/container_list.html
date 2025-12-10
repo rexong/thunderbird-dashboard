@@ -1,0 +1,14 @@
+{{define "container_list.html"}}
+    {{range .}}
+    <tr>
+        <td>{{.ID | printf "%.8s"}}</td>
+        <td>{{.Name}}</td>
+        <td>{{.Status}}</td>
+        <td>{{.Running}}</td>
+    </tr>
+    {{else}}
+    <tr>
+        <td colspan="6" style="text-align: center;">No containers found or available data.</td>
+    </tr>
+    {{end}}
+{{end}}

@@ -1,0 +1,28 @@
+services:
+  web_1:
+    image: nginx:latest
+    container_name: web_1
+    ports:
+      - 8080:80
+    restart: always
+  web_2:
+    image: nginx:latest
+    container_name: web_2
+    ports:
+      - 8081:80
+    restart: always
+  web_3:
+    image: nginx:latest
+    container_name: web_3
+    ports:
+      - 8082:80
+    restart: always
+
+  dashboard:
+    build: .
+    container_name: thunderbird_dashboard
+    ports:
+      - 8888:8888
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
